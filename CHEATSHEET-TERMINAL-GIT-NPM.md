@@ -111,6 +111,12 @@ NB if you don't have a package.json with node modules defined in the scripts and
 - main.js
 - etc.
 
+## STEP FIVE
+5. create a repo on your own github and push your local repo online
+- after you've git add'ed and git commit'ed you should --> 
+-  ` git remote add origin https://github.com/YourProfileName/repoName.git ` 
+- ` git push -u origin master `
+
 
 
 
