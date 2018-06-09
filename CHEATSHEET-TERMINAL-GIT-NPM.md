@@ -114,8 +114,9 @@ NB if you don't have a package.json with node modules defined in the scripts and
 ## STEP FIVE
 5. create a repo on your own github and push your local repo online
 - after you've git add'ed and git commit'ed you should --> 
--  ` git remote add origin https://github.com/YourProfileName/repoName.git ` 
+- ` git remote add origin https://github.com/YourProfileName/repoName.git ` 
 - ` git push -u origin master `
+NB After this procedure - you only have to write ` git push ` in the command to push your repo online
 
 
 
@@ -138,10 +139,9 @@ NB Minimize "bloated" files as much as possible
 
 
 
+# ---* BUILD MODULES WALKTHROUGH FOR CSS & JS *---
 
-# ---* BUILD MODULES WALKTHROUGH FOR CSS *---
-
-NB npm is the package manager for JavaScript and the world’s largest software registry. Discover packages of reusable code — and assemble them in powerful new ways. --> from https://www.npmjs.com/
+NB `npm` is the package manager for JavaScript and the world’s largest software registry. Discover packages of reusable code — and assemble them in powerful new ways. --> from https://www.npmjs.com/
 
 NB npm is way to download JS projects (called modules)
 
@@ -150,7 +150,7 @@ NB npm is way to download JS projects (called modules)
 - NB presets skal navgives --> `_filnavn.scss` --> og defineres: `@import "filnavn";` i den aktive scss
 - NB hvis man vil installere NPM globalt --> ` npm install -g node-sass `
 1. installér node-sass lokalt --> ` npm install --save-dev node-sass `
-2. installèr/opret package.json --> ` npm init `
+2. installèr/opret package.json --> ` npm init ` 
 3. ændr' stien i package.json --> Find script tilføj eller erstat "test" med egen definition -->` "my-sass": "node-sass -w style.scss style.css" `
 4. Kør modul ved at indtaste i terminalen --> ` npm run my-sass (eller navn på modul) `
 5. site deployment / upload til git 
@@ -165,12 +165,26 @@ NB live-server er et npm modul, der reloader og viser en live version af sin kod
 2. Kør ved at indtaste i terminalen --> ` live-server `
 
 ## TRANSPILING
-NB Omdanner/omkskriver JS filer til en compiled version, med kode der virker i de fleste browsere
+NB Omdanner/omskriver JS filer til en version, med kode der virker i de fleste browsere
 NB babeljs.io er standard --> https://babeljs.io/ 
+
 1. Installér babel globalt: 
 --> ` npm install -g babel-cli `
 --> ` npm install -g babel-preset-env `
-2. Udfør / omskriv ved at indtaste i terminalen--> ` babel main.js --out-file script.compiled.js --presets=env `
+--> eller lokalt --> ` npm install --save-dev babel-cli babel-preset-env `
+2. Tilføj i package JSON --> ` "transpilejs": "babel build/main.js --out-file build/js/main.js --presets=env" `
+3. Kør transpile ved at skrive i Terminalen --> `npm run transpilejs`
+
+## UGLIFY
+NB Omdanner/omskriver JS filer til en compiled version, så "bloated" kode formindskes så vidt muligt
+NB Dokumentation--> https://www.npmjs.com/package/uglify-js
+
+1. Installér babel globalt: 
+--> ` npm install -g babel-cli `
+--> ` npm install -g babel-preset-env `
+--> eller lokalt --> ` npm install --save-dev babel-cli babel-preset-env `
+2. Tilføj i package JSON --> ` "transpilejs": "babel build/main.js --out-file build/js/main.js --presets=env" `
+3. Kør transpile ved at skrive i Terminalen --> `npm run transpilejs`
 
 ## CONCATENATE
 NB Dette kan samle alle ens css filer i én output fil automatisk
