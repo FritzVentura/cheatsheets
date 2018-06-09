@@ -173,18 +173,16 @@ NB babeljs.io er standard --> https://babeljs.io/
 --> ` npm install -g babel-preset-env `
 --> eller lokalt --> ` npm install --save-dev babel-cli babel-preset-env `
 2. Tilføj i package JSON --> ` "transpilejs": "babel build/main.js --out-file build/js/main.js --presets=env" `
-3. Kør transpile ved at skrive i Terminalen --> `npm run transpilejs`
+3. Kør transpile ved at indtaste i Terminalen --> `npm run transpilejs`
 
 ## UGLIFY
 NB Omdanner/omskriver JS filer til en compiled version, så "bloated" kode formindskes så vidt muligt
 NB Dokumentation--> https://www.npmjs.com/package/uglify-js
 
-1. Installér babel globalt: 
---> ` npm install -g babel-cli `
---> ` npm install -g babel-preset-env `
---> eller lokalt --> ` npm install --save-dev babel-cli babel-preset-env `
-2. Tilføj i package JSON --> ` "transpilejs": "babel build/main.js --out-file build/js/main.js --presets=env" `
-3. Kør transpile ved at skrive i Terminalen --> `npm run transpilejs`
+1. Installér babel lokalt: 
+--> ` npm install --save-dev uglify-js `
+2. Tilføj i package JSON --> ` "uglifyjs": "uglifyjs build/js/main.js --compress --mangle --output build/js/main.js" `
+3. Kør manuelt ved at indtaste i Terminalen --> ` npm run uglifyjs `
 
 ## CONCATENATE
 NB Dette kan samle alle ens css filer i én output fil automatisk
